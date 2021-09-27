@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    min-width: 980px;
+    font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    /* color: #333; */
+    background-color: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td,th {
+    padding: 0
+}
+
+summary {
+    margin-bottom: 10px;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.container:before {
+    display: table;
+    content: ""
+}
+
+.container:after {
+    display: table;
+    clear: both;
+    content: ""
+}
+
+.boxed-group {
+    position: relative;
+    border-radius: 3px;
+    margin-bottom: 30px
+}
+
+#readme .markdown-body, #readme .plain {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 30px;
+    word-wrap: break-word;
+}
+
+#readme .plain pre {
+    font-size: 15px;
+    white-space: pre-wrap
+}
+
+.repository-with-sidebar:before {
+    display: table;
+    content: ""
+}
+
+.repository-with-sidebar:after {
+    display: table;
+    clear: both;
+    content: ""
+}
+
+.repository-with-sidebar .repository-sidebar {
+    float: right;
+    width: 38px
+}
+
+.repository-with-sidebar .repository-sidebar .sidebar-button {
+    width: 100%;
+    margin: 0 0 10px;
+    text-align: center
+}
+
+.repository-with-sidebar .repository-sidebar h3 {
+    margin-bottom: 5px;
+    font-size: 11px;
+    font-weight: normal;
+    color: #999
+}
+
+.repository-with-sidebar .repository-sidebar .clone-url {
+    display: none;
+    margin-top: -5px
+}
+
+.repository-with-sidebar .repository-sidebar .clone-url.open {
+    display: block
+}
+
+.repository-with-sidebar .repository-sidebar .clone-options {
+    margin: 8px 0 15px;
+    font-size: 11px;
+    color: #666
+}
+
+.repository-with-sidebar .repository-sidebar .clone-options .octicon-question {
+    position: relative;
+    bottom: 1px;
+    font-size: 11px;
+    color: #000;
+    cursor: pointer
+}
+
+.repository-with-sidebar .repository-content {
+    /* float: left; */
+    width: 920px;
+}
+
+.repository-with-sidebar.with-full-navigation .repository-content {
+    width: 790px;
+}
+
+.repository-with-sidebar.with-full-navigation .repository-sidebar {
+    width: 170px
+}
+
+.repository-with-sidebar.with-full-navigation .sunken-menu-group .tooltipped:before, .repository-with-sidebar.with-full-navigation .sunken-menu-group .tooltipped:after {
+    display: none
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4183c4;
+}
+</style>
+</head>
+<body><div id="readme" class="container"><article class="markdown-body"><h1>Rasa Cloud-Dienst</h1>
+<p>Der Rasa Cloud-Dienst verbindet das Speech-Framework &#xFC;ber die generische Port-Schnittstelle mit dem Rasa-Server. Der Rasa Cloud-Dienst dient zur Sprachanalyse und sp&#xE4;ter auch als Bot.
+Um ihn verwenden zu k&#xF6;nnen, ist ein eigener Rasa-Server lokal oder im Internet einzurichten. F&#xFC;r die Sprachanalyse m&#xFC;ssen entsprechende Sprachmodelle in Rasa erstellt und trainiert werden. Diese erlauben die Zuordnung zwischen einer Spracheingabe und einem Intent. Der Intent kann in der Web-App weiterverarbeitet werden.</p>
+<p><img src="./Rasa-1.gif" alt="Rasa-Architektur"></p>
+<p>In der oberen Grafik wird die Architektur des Rasa Cloud-Dienstes als Wrapper f&#xFC;r den Rasa Server dargestellt. &#xDC;ber die statische Rasa-Verwaltungsklasse kann auf RasaPort mit Hilfe des generischen Port-APIs zugegriffen werden. Die RasaFactory erzeugt einen RasaPort, der seinerseits die Wrapper-Klassen f&#xFC;r die RasaNLU und den RasaBot beinhaltet. Diese greifen direkt auf den Rasa-Server zu.</p>
+<h2>Rasa API</h2>
+<p>Die Rasa-API besteht aus der statischen Klasse Rasa und ihrer statischen Klassenfunktionen. In der folgenden Abbildung sind alle &#xF6;ffentlichen Klassenfunktionen aufgef&#xFC;hrt.</p>
+<p><img src="./Rasa-2.gif" alt="Rasa-API"></p>
+<h3>Rasa.init( optionList: RasaOptionInterface ): number</h3>
+<p>Mit dem Aufruf:</p>
+<pre><code>const result = Rasa.init( optionList );
+</code></pre>
+<p>wird das Rasa Subsystem als Anbindung an den Rasa Cloud-Dienst initialisiert. Als result wird 0 f&#xFC;r erfolgreich und -1 f&#xFC;r einen aufgetretenen Fehler zur&#xFC;ckgegeben.</p>
+<p>Das RasaOptionInterface defniert folgende optionale Parameter:</p>
+<pre><code>export interface RasaOptionInterface {
+    /** legt den konkreten Port fest, der geladen werden soll, wird hier RasaMock angegeben, wird der Mock geladen */
+    rasaPortName?: string;
+    /** legt die URL fuer die Verbindung zum Server fest */
+    rasaServerUrl?: string;
+    /** legt dynamische Konfigurierbarkeit fest */
+    rasaDynamicCredentialsFlag?: boolean;
+    /** legt den App Key (Token) fuer die Verbindung zum Server fest, das gleiche Token muss beim Start des Servers angegeben werden */
+    rasaAppKey?: string;
+    /** legt die Fehlerausgabe fest */
+    errorOutputFlag?: boolean;
+}
+</code></pre>
+<p>Die wichtigsten Parameter werden hier nochmal aufgef&#xFC;hrt:</p>
+<ul>
+<li><strong>RasaPortName:</strong> hier kann man &quot;RasaPort&quot; oder &quot;RasaMock&quot; als Portname angeben. RasaMock verbindet sich nicht mit dem Rasa Cloud-Dienst kann f&#xFC;r die Unit-Tests verwendet werden.</li>
+<li><strong>RasaServerUrl:</strong> hier kann man &quot;http://localhost:5005&quot; f&#xFC;r einen lokalen Rasa-Server angeben, oder eine andere URL f&#xFC;r einen Remote Rasa-Server.</li>
+<li><strong>RasaDynamicCredentialsFlag:</strong> wird hier true angegeben, k&#xF6;nnen die Rasa-Credentials f&#xFC;r den AppKey auch sp&#xE4;ter &#xFC;ber Rasa.setConfig( aConfigData ) &#xFC;bergeben werden. Wird hier false angegeben oder der Parameter nicht eingetragen, muss der folgende Parameter RasaAppKey eingetragen sein.</li>
+<li><strong>rasaAppKey:</strong> hier wird der AppKey (Token) des eigenen Rasa-Servers angegeben. Muss vorhanden sein, wenn rasaDynamicCredentialsFlag false ist oder nicht eingetragen wurde. Der gleiche Token wird beim Start des Rasa-Servers &#xFC;bergeben.</li>
+</ul>
+<h3>Rasa.isInit(): boolean</h3>
+<p>Mit dem Aufruf:</p>
+<pre><code>if ( Rasa.isInit()) {...}
+</code></pre>
+<p>kann gepr&#xFC;ft werden, ob das Rasa Subsystem bereits initialisiert wurde. Es wird true oder false zur&#xFC;ckgegeben.</p>
+<h3>Rasa.done(): number</h3>
+<p>Mit dem Aufruf:</p>
+<pre><code>const result = Rasa.done();
+</code></pre>
+<p>wird das Rasa Subsystem wieder freigegeben. Die Verbindung zum externen Rasa-Server wird beendet. Danach kann das Rasa Subsystem erneut mit neuen optionalen Parametern initialisiert werden.</p>
+<h3>Rasa.open( openEventCallback: any): number</h3>
+<p>Mit dem Aufruf:</p>
+<pre><code>const result = Rasa.open((error, portName, portResult) =&gt; {...}); 
+</code></pre>
+<p>wird der RasaPort mit dem externen Rasa-Server verbunden. In result wird 0 f&#xFC;r erfolgreich und -1 f&#xFC;r einen aufgetretenen Fehler zur&#xFC;ckgegeben.</p>
+<p>Die openEventCallback-Funktion gibt drei Werte zur&#xFC;ck, der erste Wert ist ein Fehler oder null, der zweite Wert beinhaltet den Portnamen und der dritte Wert das Ergebnis 0 oder -1 f&#xFC;r erfolgreiches &#xD6;ffnen des RasaPort oder nicht. Bei -1 wurde auch ein Fehler &#xFC;bergeben. Die Definition der openEnventCallback-Funktion sieht folgenderma&#xDF;en aus:</p>
+<pre><code>const openEventCallback = ( error: Error, portName: string, portResult: number ) =&gt; {
+	// hier kann auf das OpenEvent entsprechend den R&#xFC;ckgabewerten reagiert werden
+}
+</code></pre>
+<h3>Rasa.setConfig( configData: RasaConfigDataInterface ): number</h3>
+<p>Mit dem Aufruf:</p>
+<pre><code>const result = Rasa.setConfig( configData );
+</code></pre>
+<p>k&#xF6;nnen die Rasa-Credentials nach der Initialisierung des Rasa Subsystems eingetragen werden, wenn beim Aufruf von Rasa.init( optionList ) als optionaler Parameter RasaDynamicCredentialsFlag: true &#xFC;bergeben worden ist. Ansonsten wird hier -1 zur&#xFC;ckgegeben und die Rasa-Credentials nicht eingetragen.</p>
+<p>Das RasaConfigDataInterface beinhaltet folgende Parameter:</p>
+<pre><code>export interface RasaConfigDataInterface {
+    /** legt die URL fuer die Verbindung zum Server fest */
+    rasaServerUrl?: string;
+    /** legt den AppKey (Token) fuer die Verbindung zum Server fest */
+    RasaAppKey: string;
+}
+</code></pre>
+<h3>Rasa.getConfig(): RasaConfigDataInterface</h3>
+<p>Mit dem Aufruf:</p>
+<pre><code>const configData = Rasa.getConfig();
+</code></pre>
+<p>kann man die aktuell eingetragenen Rasa-Credentials auslesen.</p>
+</article></div></body></html>
